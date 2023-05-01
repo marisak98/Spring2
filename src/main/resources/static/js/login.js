@@ -19,6 +19,6 @@ async function loginSession() {
     body: JSON.stringify(datos)
 
   });
-  const users = await resquest.json();
+  const response = await resquest.json();
 }
 
