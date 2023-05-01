@@ -19,6 +19,11 @@ async function loginSession() {
     body: JSON.stringify(datos)
 
   });
-  const response = await resquest.json();
+  const response = await resquest.text();
+  if (response == 'OK') {
+    window.location.href = 'tables.html'
+  } else {
+    alert("[!] Credentials incorrect"); 
+  }
 }
 
