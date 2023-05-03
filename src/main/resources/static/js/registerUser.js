@@ -28,4 +28,6 @@ if (repeatPassword != datos.password) {
     body: JSON.stringify(datos)
 
   });
+  alert("[+] Account was created successfully!");
+  window.location.href = 'login.html'
 }

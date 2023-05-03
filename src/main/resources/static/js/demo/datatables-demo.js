@@ -8,8 +8,11 @@ async function userCallServer() {
    const resquest = await fetch('api/users', {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+       'Accept': 'application/json',
+       'Content-Type': 'application/json',
+       'Authorization': localStorage.token
+
+
     }
   });
   const users = await resquest.json();
@@ -31,6 +34,16 @@ async function userCallServer() {
   document.querySelector('#dataTable tbody').outerHTML = usersList;
 }
 
+function obtenerHeaders() {
+  return {
+   'Accept': 'application/json',
+   'Content-Type': 'application/json',
+   'Authorization': LocalStorage.token
+
+  };
+
+}
+
 async function eliminarUsers(id) {
   if (!confirm('Desea Eliminar este usuario?')) {
     return;
@@ -38,9 +51,11 @@ async function eliminarUsers(id) {
   const resquest = await fetch('api/users/' + id, {
     method: 'DELETE',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+       'Accept': 'application/json',
+       'Content-Type': 'application/json',
+       'Authorization': localStorage.token
     }
+
   }); 
   location.reload()
 }

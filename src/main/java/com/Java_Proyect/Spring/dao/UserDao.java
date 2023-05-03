@@ -13,7 +13,7 @@ public interface UserDao {
 
     void newUser(Users users);
 
-    boolean credentialsUsers(Users users);
+    Users credentialsUsers(Users users);
 
 
 }

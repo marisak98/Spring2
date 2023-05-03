@@ -20,7 +20,10 @@ async function loginSession() {
 
   });
   const response = await resquest.text();
-  if (response == 'OK') {
+  console.log(response);
+  if (response != 'FAIL') {
+    localStorage.token = response;
+    localStorage.email = datos.email;
     window.location.href = 'tables.html'
   } else {
     alert("[!] Credentials incorrect"); 
